@@ -1,6 +1,7 @@
+import { Container } from "postcss";
 import type { Config } from "tailwindcss";
 
-const config: Config = {
+export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,12 +9,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      Container:{
+      center:true,
+      padding:"15px"
+    },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        accent: "#08E95E"
       },
     },
   },
   plugins: [],
-};
-export default config;
+} satisfies Config;
